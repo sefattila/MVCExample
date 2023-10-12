@@ -1,0 +1,36 @@
+﻿@using MVCExample.UI.Models.VMs.UserVMs;
+
+@model IEnumerable<UserVM>
+
+<div class="container col-lg-10">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Kullanıcı Adı</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Mail</th>
+                <th>Telefon Numarası</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (UserVM item in Model)
+            {
+                <tr>
+                    <th>@item.Id</th>
+                    <th>@item.UserName</th>
+                    <th>@item.FirstName</th>
+                    <th>@item.LastName</th>
+                    <th>@item.Email</th>
+                    <th>@item.PhoneNumber</th>
+                    <th><a asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning">Güncelle</a></th>
+                    <th><a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a></th>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Create" class="btn btn-outline-success">Kullanıcı Ekle</a>
+</div>

@@ -1,0 +1,25 @@
+﻿@using MVCExample.UI.Models.VMs.CategoryVMs;
+
+@model CategoryCreateVM
+
+<div class="container col-lg-4">
+    <form asp-action="Create" method="post">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th><label asp-for="CategoryName" class="control-label"></label></th>
+                    <td><input type="text" asp-for="CategoryName" class="form-control" /></td>
+                    <td><span asp-validation-for="CategoryName" class="text-danger"></span></td>
+                </tr>
+                <tr>
+                    <th><label asp-for="Description" class="control-label"></label></th>
+                    <td><input type="text" asp-for="Description" class="form-control" /></td>
+                    <td><span asp-validation-for="Description" class="text-danger"></span></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" class="btn btn-success">Ekle</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

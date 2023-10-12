@@ -1,0 +1,25 @@
+﻿@using MVCExample.UI.Models.VMs.UserVMs;
+
+@model UserLoginVM
+
+<div class="container col-lg-4">
+    <form asp-action="LogIn" method="post">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th><label asp-for="UserName" class="control-label"></label></th>
+                    <td><input type="text" asp-for="UserName" class="form-control" /></td>
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </tr>
+                <tr>
+                    <th><label asp-for="Password" class="control-label"></label></th>
+                    <td><input type="password" asp-for="Password" class="form-control" /></td>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </tr>
+                <tr>
+                    <td><button type="submit" class="btn btn-success">Giriş Yap</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
